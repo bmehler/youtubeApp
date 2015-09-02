@@ -1,0 +1,33 @@
+{
+  "name": "youtubeApp",
+  "version": "1.0.1",
+  "description": "A tool for fetching videos of a youtube channel",
+  "main": "server.js",
+  "author": "Bernhard Mehler",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.25"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "./node_modules/karma/bin/karma start karma.conf.js",
+    "full-test": "NODE_ENV=test ./node_modules/karma/bin/karma start karma.conf.js"
+  },
+  "dependencies": {
+    "express": "~4.13.x",
+    "body-parser": "~1.13.3",
+    "method-override": "~2.3.5"
+  },
+  "devDependencies": {
+    "karma": "~0.13.0",
+    "karma-jasmine": "~0.1.0",
+    "phantomjs": "~1.9.18",
+    "karma-phantomjs-launcher": "~0.2.1",
+    "karma-chrome-launcher": "~0.2.0",
+    "karma-firefox-launcher": "~0.1.6",
+    "gulp": "~3.9.0",
+    "gulp-nodemon": "~2.0.3",
+    "gulp-jshint": "~1.11.2",
+    "gulp-sass": "~2.0.4"
+  }
+}

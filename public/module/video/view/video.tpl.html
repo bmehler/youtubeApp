@@ -1,0 +1,50 @@
+<div class="container" style="margin-top:100px">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    <h3>Watch your favorite Youtube Channel</h3>
+    </div>
+    <div class="panel-body">
+      <div class="well">
+        <h4>Search by video title</h4>
+        <div class="form-group">
+          <input class="form-control  input-lg" type="text" ng-model="searchText" placeholder="Enter video title" />
+      </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h4>Sort alphabetically by title</h4>
+            <div class="form-group">
+              <select class="form-control input-lg" ng-options="title.label for title in titles track by title.id" ng-model="title" ng-change="orderTitle()">{{item.name}}</select>
+          </div>
+        </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h4>Sort by video duration</h4>
+            <div class="form-group">
+              <select class="form-control  input-lg" ng-options="duration.label for duration in durations track by duration.id" ng-model="duration" ng-change="orderDuration()">{{item.name}}</select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container centered">
+  <div class="row">
+    <div ng-repeat="video in video.videos.items | filter: searchText | orderBy: video.orderProp">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+        <div class="test">
+          <a class="fancybox" href="http://www.youtube.com/embed/{{video.id}}?autoplay=1">
+            <img ng-src="{{video.snippet.thumbnails.medium.url}}" />
+          </a>
+        </div>
+        <a class="btn btn-danger" ng-click="showDialog($index+1)">Show Details</a>
+        <div class="wrapper{{ $index + 1 }}">
+          <div class="future_fancybox_content">
+          <p><strong>Titel:</strong> {{video.snippet.title}}</p>
+          <p><strong>Description:</strong> {{video.snippet.description}}</p>
+          <p><strong>Duration:</strong> {{video.contentDetails.duration | TimestampFilter}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
