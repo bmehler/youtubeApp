@@ -3,6 +3,12 @@ A tool for fetching videos of your favourite youtube channel.
 
 "youtubeApp" is a small project to get familiar with AngularJS and the YouTube Data API v3.
 
+Please respect especially the license terms of fancybox.
+The fancybox is only free for personal or non-profit website projects.
+More detailed informations about licensing you will find on the fancybox website.
+
+[License fancybox](http://fancyapps.com/fancybox/#license)
+
 ## Installation
 To install the youtubeApp clone the repository and install the dependencies.
 ```
