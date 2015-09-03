@@ -48,30 +48,31 @@ function YoutubeCtrl ($scope, $filter, YoutubeDataService, FancyBoxService) {
   function getVideos () {
     YoutubeDataService.getSearchList()
       .success(function (data) {
-          var vid = '';
-          for (var i = 0; i< data.items.length; i++) {
+        var vid = '';
+        for (var i = 0; i< data.items.length; i++) {
           vid += data.items[i].id.videoId + ',';
-          }
-          var vidnew = vid.substr(0, vid.length-1);
+        }
+        var vidnew = vid.substr(0, vid.length-1);
 
-          YoutubeDataService.getVideoList(vidnew)
-          .success(function (data) {
-              video.videos = data;
-              for (var j = 0; j < video.videos.items.length; j++) {
-                video.videos.items[j].videoDuration = moment.duration(
-                video.videos.items[j].contentDetails.duration)
-                .asMilliseconds();
-              }
-            return video.videos;
-          })
-          .error(function (error) {
-          console.log(error);
-          });
+        YoutubeDataService.getVideoList(vidnew)
+        .success(function (data) {
+          video.videos = data;
+          for (var j = 0; j < video.videos.items.length; j++) {
+            video.videos.items[j].videoDuration = moment.duration(
+            video.videos.items[j].contentDetails.duration)
+            .asMilliseconds();
+          }
+          return video.videos;
         })
         .error(function (error) {
-        console.log(error);
+          console.log(error);
         });
+      })
+      .error(function (error) {
+        console.log(error);
+      });
   };
+
   $scope.showDialog = function(video) {
     FancyBoxService.openBox('div.wrapper' + video);
   };
