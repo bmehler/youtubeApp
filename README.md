@@ -12,10 +12,14 @@ $ npm install
 ```
 
 ## Preparations
-To use the youtubeApp you need an API Key and the Channel ID. Please fill in both:
+For running the youtubeApp you need an API Key and a Channel ID. Please fill both in:
 ```
 $ cd public/module/video/service
 $ (vim | nano) YoutubeDataService.js
+
+/* public/module/video/service/YoutubeDataService */
+var channelId = '';
+var apiKey = '';
 ```
 ## Quick start
 To run the app traditionally enter:
@@ -45,7 +49,7 @@ To run the tests enter:
 ```
 $ (npm test | npm run full-test)
 ```
-First will run the test with autoWatch: true.
+First will run the test with *singleRun: true*.
 Feel free to change it up to your needs.
 
 ### Troubleshooting
