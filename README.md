@@ -17,9 +17,9 @@ For running the youtubeApp you need an API Key and a Channel ID. Please fill bot
 $ cd public/module/video/service
 $ (vim | nano) YoutubeDataService.js
 
-/* public/module/video/service/YoutubeDataService */
-var channelId = '';
-var apiKey = '';
+/* public/module/video/service/YoutubeDataService.js */
+var channelId = '<channelId>';
+var apiKey = '<apiKey>';
 ```
 ## Quick start
 To run the app traditionally enter:
